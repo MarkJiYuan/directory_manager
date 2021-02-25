@@ -1,1 +1,2 @@
 # directory_manager
+根据配置快捷创建文件夹和文件

@@ -2,32 +2,13 @@
     "directory_name": "course_name",
     "sub_directory": [
         {
-            "directory_name": "documentary",
-            "sub_directory": []
+            "directory_name": "documents"
         },
         {
-            "directory_name": "lectures",
-            "sub_directory": []
+            "directory_name": "lectures"
         },
         {
-            "directory_name": "books",
-            "sub_directory": [],
-            "files": [
-                {
-                    "file_name": "hahha.txt"
-                },
-                {
-                    "file_name": "test.txt"
-                }
-            ]
-        },
-        {
-            "directory_name": "notes",
-            "sub_directory": [],
-            "files": {
-                "file_format": "note_{}.md",
-                "var_range": [1, 16]
-            }
+            "directory_name": "books"
         },
         {
             "directory_name": "homeworks",
@@ -35,6 +16,9 @@
                 "directory_format": "homework_{}",
                 "var_range": [1, 16]
             }
+        },
+        {
+            "directory_name": "bulletin"
         }
     ]
 }

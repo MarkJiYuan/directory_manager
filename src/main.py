@@ -2,11 +2,15 @@ import json
 import os
 import logging
 
+root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+structure_path = os.path.join(root_path, 'structure.json')
+
+
 dir_create_count = 0
 file_create_count = 0
 
 
-def read_structure(path="/Users/zhengjiyuan/Desktop/Python/directory_manager/structure.json"):
+def read_structure(path=structure_path):
     with open(path, "r") as f:
         structure = json.loads(f.read())
     return structure
@@ -42,7 +46,7 @@ def recurse(structure, path):
     path.append(directory_name)
     mkdir(os.path.join(*path))
 
-    sub_directory = structure["sub_directory"]
+    sub_directory = structure.get("sub_directory")
     if sub_directory:
         if isinstance(sub_directory, list):
             for sub_structure in sub_directory:
@@ -53,7 +57,7 @@ def recurse(structure, path):
             for var in range(var_range[0], var_range[1]):
                 mkdir(os.path.join(*path, directory_format.format(var)))
 
-    files = structure.get("files", None)
+    files = structure.get("files")
     if files:
         generate_files(files, path)
 
